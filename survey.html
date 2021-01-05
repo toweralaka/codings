@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Spending Survey Form</title>
+    <style>
+        .container {
+            background-image: #FFFDD0;
+        }
+        header {
+            width: 100%;
+            background-color: #A488AA;
+            line-height: 1;
+            font-size: 3vmin;
+            text-align: center;
+            border-bottom-style: outset;
+            border-right-style: outset;
+            padding: 2%;
+            border-radius: 2px;
+        }
+        main {
+            font-size: 1.7vw;
+            line-height: 1.7;
+            padding: 5% 10%;
+            width: 50%;
+            margin: auto;
+            background-color: rgb(178,154,183);
+            /* background-image: radial-gradient(#FF9999 30%, #9A9BFE 40%, #FF99D7 30%); */
+            box-shadow: 5px 10px 20px #663f99;
+        }
+        input[type=text],input[type=email],input[type=number], select, textarea {
+            background-color:rgb(172, 168, 168);
+            padding: 2%;
+            border-radius: 5px;
+            width: 100%;
+        }
+        input[type=text]:focus,input[type=email]:focus,input[type=number]:focus, textarea:focus {
+            background-color: whitesmoke;
+        }
+        input::placeholder, select {
+            font-size: medium;
+            color: #333333;
+        }
+        .button {
+            text-align: center;
+
+        }
+        button {
+            padding: 2%;
+            border-radius: 5px;
+            }
+        footer {
+            margin-top: 4%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+            <header>
+                <h1 id="title">Household Spending Survey Form</h1>
+                <p id="description">
+                    A survey of household expenditure
+                </p>
+            </header>
+            <section>
+                <form id="survey-form" action="">
+                    <label for="name" id="name-label">
+                        Name:
+                    </label><br>
+                    <input placeholder="Full name, surname first" id="name" type="text" required><br>
+                    <label for="email" id="email-label">
+                        Email:
+                    </label><br>
+                    <input placeholder="Email Address e.g:you@example.com" id="email" type="email" required><br>
+                    <label for="number" id="number-label">
+                        Number:
+                    </label><br>
+                    <input placeholder="A number between 0 and 100" id="number" type="number" min="0" max="100"><br>
+                    <label for="dropdown">
+                        Marital Status:
+                    </label><br>
+                    <select id="dropdown">
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Divorced</option>
+                        <option>Separated</option>
+                        <option>Widowed</option>
+                        <option>Others</option>
+                    </select><br>
+                    <fieldset>
+                        <legend>Sex</legend>
+                        <label>
+                            <input type="radio" value="male" name="sex">
+                            Male
+                        </label><br>
+                        <label>
+                            <input type="radio" value="female" name="sex">
+                            Female
+                        </label><br>
+                    </fieldset><br>
+                    <fieldset>
+                        <legend>Family Income</legend>
+                        <label>
+                            <input type="radio" value="1000" name="income">
+                            NGN1,000 - NGN15,000
+                        </label><br>
+                        <label>
+                            <input type="radio" value="16000" name="income">
+                            NGN16,000 - NGN30,000
+                        </label><br>
+                        <label>
+                            <input type="radio" value="31000" name="income">
+                            NGN31,000 - NGN120,000
+                        </label><br>
+                        <label>
+                            <input type="radio" value="121000" name="income">
+                            NGN121,000 - NGN350,000
+                        </label><br>
+                        <label>
+                            <input type="radio" value="351000" name="income">
+                            NGN351,000 and above
+                        </label><br>
+                    </fieldset><br>
+                    <fieldset>
+                        <legend>Select Items You Spend On</legend>
+                        <label for="medicals">
+                            <input id="medicals" value="medicals" type="checkbox" name="spending"> Medicals
+                        </label><br>
+                        <label for="entertainment">
+                            <input id="entertainment" value="entertainment" type="checkbox" name="spending"> Entertainment
+                        </label><br>
+                        <label for="food">
+                            <input id="food" value="food" type="checkbox" name="spending"> Food
+                        </label><br>
+                        <label for="clothing">
+                            <input id="clothing" value="clothing" type="checkbox" name="spending"> Clothing
+                        </label><br>
+                        <label for="transportation">
+                            <input id="transportation" value="transportation" type="checkbox" name="spending"> Transportation
+                        </label><br>
+                    </fieldset><br>
+                    <label for="comment">
+                        Additional Comment<br>
+                        <textarea></textarea>
+                    </label><br>
+                    <div class="button">
+                        <button id="submit">Submit</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <footer>Copyright 2020</footer>
+    </div>
+</body>
+</html>
