@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        .container {
+            position: absolute;
+            top: 0;
+            font-size: 2vmax;
+            text-align: center;
+            /* background: url("https://images.unsplash.com/photo-1498429152472-9a433d9ddf3b"); */
+            background: linear-gradient(rgba(50, 55, 150, 0.6), rgba(29, 38, 113, 0.8)), url("https://images.unsplash.com/photo-1517263904808-5dc91e3e7044");
+        }
+        main {
+            width: 90%;
+            height: auto;
+            margin: auto;
+            padding-top: 50px;
+            background: rgba(48, 46, 45, 0.4);
+            line-height: 1.5;
+            /* font-size: 1.8vw; */
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #FFFF47;
+             /* #005748; */
+        }
+        header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* justify-content: end; */
+            align-items: flex-end;
+            border-bottom: 2px dotted silver;
+            height: auto;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.6);
+            width: 100%;
+            /* font-size: 2vw; #707879 */
+        }
+        header a {
+            color: #fff;
+            
+        }
+        .company {
+            display: flex;
+            justify-content: start;
+            align-items: flex-end;
+        }
+        nav {
+            /* margin: 0 0 0 auto; */
+            /* max-width: 100%; */
+            /* align-self: end; */
+            font-size: 2.2vmax;
+            position: fixed;
+            width: 60%;
+            right: 0;
+        }
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            align-items: flex-end;
+            margin-bottom: 0;
+
+        }
+        li {
+            padding-right: 2%;
+            width: 100%;
+            border-right: outset 2px honeydew;
+            border-bottom: outset 2px honeydew;
+            border-bottom-right-radius: 8px;
+        }
+        /* ul li a {
+            padding: 2%;
+            width: fit-content;
+        } */
+        .nav-link, a {
+            text-decoration: none;
+            /* font-size: 2vw; */
+        }
+        #header-img {
+            height: 100px;
+            width: auto;
+        }
+        section {
+            margin-top: 5%;
+        }
+        #intro {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .intro {
+            font-weight: 900;
+            font-size: 5vw;
+            margin-bottom: 2%;
+
+        }
+        h3 {
+            text-align: center;
+            margin-bottom: 0.5%;
+        }
+        #show-case {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 2%;
+        }
+        figure {
+            text-align: center;
+            width: 90%;
+            height: auto;
+            margin: auto;
+        }
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        #testimony {
+            width: 90%;
+            margin: auto;
+            text-align: center;
+        }
+        #video {
+            min-height: 515px;
+            width: 100%;
+            display: block;
+            margin: auto;
+        }
+        #quote {
+            width: 80%;
+            padding: 2%;
+            margin: auto;
+        }
+        .quote-label {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+        }
+        .subscribe-label {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+        }
+        #subscribe {
+            width: 50%;
+            margin: auto;
+        }
+        input, textarea {
+            padding: 5%;
+            background-color: rgb(245, 239, 239);
+            color: rgb(0, 0, 0);
+            border-radius: 5px;
+        }
+        button, input[type=submit] {
+            padding: 10px;
+            background-color: #FFFF47;
+            color: rgb(12, 11, 11);
+            font-weight: 800;
+            border-radius: 5px;
+        }
+
+        .about {
+            display: flex;
+            width: 100%;
+            margin: auto;
+            justify-content: space-around;
+        }
+        .about-item {
+            padding: 2%;
+            text-align: justify;
+            width: 28%;
+            box-shadow: 4px 5px 5px silver;
+            border-bottom-right-radius: 10px ;
+        }
+        .address {
+            padding: 2%;
+            width: 50%;
+            margin: auto;
+            text-align: left;
+        }
+        footer {
+            margin-top: 5%;
+            text-align: center;
+            color:  #FFFF47;
+        }
+        @media (max-width: 800px) {
+            #header-img {
+                height: 40px;
+                width: auto;
+            } 
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: auto;
+            }
+            #video {
+                min-height: 300px;
+                margin: auto;
+            } 
+        }
+        @media (max-width: 350px) {
+            header {
+                justify-content: stretch;
+            }
+            nav {
+                width: 100%;
+                right: 0;
+                font-weight: 700;
+            }
+            li {
+                width: 100%;
+                border-right: outset 1px honeydew;
+                border-bottom: 0px;
+                border-bottom-right-radius: 1px;
+                /* color: #FFFF47; */
+            }
+            #intro {
+                margin-top: 10px;
+            }
+            #header-img {
+                height: 40px;
+                width: auto;
+            } 
+            #video {
+                min-height: auto;
+            } 
+            .about {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin: auto;
+                /* justify-content: space-around; */
+            }
+            .about-item {
+                padding: 2%;
+                width: 60%;
+                box-shadow: 2px 5px 5px purple;
+                margin: auto;
+            }
+            #show-case {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr ;
+                grid-template-rows: 1fr 1fr 1fr;
+                row-gap: 2%;
+            }
+            figure {
+                text-align: center;
+                width: 90%;
+                height: auto;
+                margin: auto;
+            }
+            .quote-label {
+                display: grid;
+                grid-template-columns: auto;
+            }
+            .subscribe-label {
+                display: grid;
+                grid-template-columns: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <div>
+                <a class="company" href="#">
+                    <img src="https://clipartstation.com/wp-content/uploads/2017/11/champagne-glasses-clipart-7.png" id="header-img" />
+                    <h1>WeEvent</h1>
+                </a>
+            </div>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a class="nav-link" href="#events"> Events</a></li>
+                    <li><a class="nav-link" href="#testimonials"> Testimonials</a></li>
+                    <li><a class="nav-link" href="#about"> About Us</a></li>
+                    <li><a class="nav-link" href="#talk"> Let's Talk</a></li>
+                    <li><a class="nav-link" href="#contact"> Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="intro">
+                <h2 class="intro"><small>At</small> WeEvent...</h2>
+                <p>We stand by you through all your events</p>
+
+            </section>
+            <section id="events">
+                <h3>PLANNING AND CELEBRATING WITH YOU</h3>
+                <div id="show-case">
+                    <div>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1523301343968-6a6ebf63c672?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
+                            <figcaption>Pool Parties</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1531956531700-dc0ee0f1f9a5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
+                            <figcaption>Children Events</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1446822775955-c34f483b410b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
+                            <figcaption>Anniversaries</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1604668915840-580c30026e5f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=904&q=80" />
+                            <figcaption>Birthday Celebration</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1465060810938-30bbe7c40e76?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=815&q=80" />
+                            <figcaption>Carnivals</figcaption>
+                        </figure>
+                    </div>
+                    <div>
+                        <figure>
+                            <img src="https://images.unsplash.com/photo-1543325768-b7c960228a24?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" />
+                            <figcaption>Office Celebration</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+            <section id="testimonials">
+                <h3>WHAT CUSTOMERS ARE SAYING</h3>
+                <div id="testimony">
+                    <iframe id="video" src="https://www.youtube.com/embed/K8E0aoJTMwY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- <video id="video" src="https://youtu.be/K8E0aoJTMwY"> 
+                    </video> -->
+                </div>
+            </section>
+            <section id="about">
+                <h3>ABOUT US</h3>
+                <div class="about">
+                    <div class="about-item">
+                        <h3>Our Vision</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas laborum blanditiis labore, voluptate temporibus harum exercitationem! Esse numquam, error fuga repellendus incidunt autem pariatur excepturi delectus vel, earum magnam ad.</p>
+                    </div>
+                    <div class="about-item">
+                        <h3>Our Mission</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam qui tenetur et nisi suscipit? Nostrum recusandae similique, illum culpa voluptates autem voluptate minima harum vero odit doloribus possimus, tempora ullam.
+                        </p>
+                    </div>
+                    <div class="about-item">
+                        <h3>Our Philosophy</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quia optio possimus, ut cum debitis. Beatae excepturi, commodi rerum, reprehenderit animi aliquid nostrum alias eum vel, quaerat dolore consequatur maiores!
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="talk">
+                <h3>LET US COMMUNICATE</h3>
+                <div id="quote">
+                    <h4>REQUEST A QUOTE</h4>
+                    <form id="form1" action="https://www.freecodecamp.com/email-submit">
+                        <label class="quote-label" for="email1" id="email-label">
+                            Email:
+                            <input placeholder="Email Address e.g:you@example.com" id="email1" type="email" required>
+                        </label>
+                        <br>
+                        <label class="quote-label" for="comment">
+                            Describe Your Event:
+                            <textarea id="comment" rows="5"></textarea>
+                        </label><br>
+                        <div class="button">
+                            <button id="submit1">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="subscribe">
+                    <h4>SUBSCRIBE TO OUR NEWSLETTERS</h4>
+                    <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+                        <div class="subscribe-label">
+                            <label for="email" id="email-label">
+                                Email:
+                            </label>
+                            <input name="email" placeholder="Email Address e.g:you@example.com" id="email" type="email" required>
+                            <div class="button">
+                                <input type="submit" id="submit" value="Submit">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="address">
+                    <h3>CONTACT</h3>
+                    <p>Address: 2, Norman Williams, Jakande, Ebonyi State, Nigeria</p>
+                    <p>Email: support@example.com</p>
+                    <p>Phone: 0801-234-5678</p>
+                </div>
+            </section>
+        </main>
+        <footer>Copyright 2020</footer>
+    </div>
+</body>
+</html>
