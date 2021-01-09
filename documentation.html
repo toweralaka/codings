@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <style>
+        /* .container {
+            height: auto;
+        }
+         */
+        .doc {
+            width: 100%;
+        }
+        #navbar {
+            border-right: 2px solid gray;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow-x: hidden;
+            width: 20%;
+        }
+        h1 {
+            font-weight: 900;
+            font-size: 8vmin;
+        }
+        header {
+            padding: 1%;
+        }
+        .nav-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-wrap a:hover {
+            color: rgb(9, 87, 9);
+            }
+        .nav-link {
+            width: 90%;
+            border-bottom: 1px solid gray;
+            padding: 3%;
+            text-decoration: none;
+            font-size: 1.8vmax;
+        }
+        .nav-item {
+            margin: 1% auto;
+            text-transform: capitalize;
+        }
+        #main-doc {
+            /* height: 90%; */
+            /* position: absolute; */
+            background-color: honeydew;
+            font-size: 1.5vmax;
+            margin-left: 20%;
+            padding: 2%;
+        }
+        .terminal {
+            width: 80%;
+            text-overflow: scroll;
+            border: 1px solid gray;
+            margin: auto;
+            padding: 1%;
+        }
+        .code-head {
+            font-size: small;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        pre {
+            margin-top: 0;
+        }
+        pre code {
+
+            font-size: small;
+            background-color: #eee;
+            border: 1px solid #999;
+            display: block;
+            width: 80%;
+            padding: 2%;
+            margin: auto;
+            overflow: scroll;
+        }
+        footer {
+            opacity: 0.5;
+            text-align: right;
+        }
+        @media (max-width: 350px) {
+            h2 {
+                font-size: 10px;
+            }
+            #navbar {
+                width: 2px;
+            }
+            #main-doc {
+                left: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="doc">
+            <nav id="navbar">
+                <header>
+                    <h1>Django</h1>
+                </header>
+                <div class="nav-wrap">
+                    <a href="#introduction" class="nav-link">
+                        <p class="nav-item">Introduction</p>
+                    </a>
+                    <a href="#Quick_Install" class="nav-link">
+                        <p class="nav-item">Quick Install</p>
+                    </a>
+                    <a href="#Create_App" class="nav-link">
+                        <p class="nav-item">Create App</p>
+                    </a>
+                    <a href="#First_View" class="nav-link">
+                        <p class="nav-item">First View</p>
+                    </a>
+                    <a href="#Minimal_Form" class="nav-link">
+                        <p class="nav-item">Minimal Form</p>
+                    </a>
+                    <a href="#Automated_Testing" class="nav-link">
+                        <p class="nav-item">Automated Testing</p>
+                    </a>
+                    <a href="#Customizing" class="nav-link">
+                        <p class="nav-item">Customizing</p>
+                    </a>
+                </div>
+            </nav>
+            <main id="main-doc">
+                <section class="main-section" id="introduction">
+                    <header><h2>Introduction</h2></header>
+                    <p>
+                        Django is a high-level Python web framework that enables rapid 
+                        development of secure and maintainable websites. Built by 
+                        experienced developers, Django takes care of much of the hassle 
+                        of web development, so you can focus on writing your app without 
+                        needing to reinvent the wheel.
+                        
+                    </p>
+                    <p>
+                        Because Django was developed in a fast-paced newsroom environment, 
+                        it was designed to make common Web development tasks fast and easy.                    </p>
+                </section>
+                <section class="main-section" id="Quick_Install">
+                    <header><h2>Quick Install</h2></header>
+                    <p>
+                        Before you can use Django, you’ll need to get it installed. We have 
+                        a complete <a href="https://docs.djangoproject.com/en/3.1/intro/install/">
+                        installation guide</a> that covers all the possibilities; this guide will
+                         guide you to a minimal installation that’ll work while you walk through 
+                        the introduction.
+                        
+                    </p>
+                    <p>
+                        <h3>Install Python</h3>
+                        Being a Python Web framework, Django requires Python. See What Python 
+                        version can I use with Django? for details.<br />
+                        Python includes a lightweight database called SQLite so you won’t need to 
+                        set up a database just yet.<br />
+                        Get the latest version of Python at https://www.python.org/downloads/ or 
+                        with your operating system’s package manager.<br />
+                        You can verify that Python is installed by typing python from your shell; 
+                        you should see something like:<br /><br />
+                        <div class="terminal">
+                            Python 3.x.y<br />
+                            [GCC 4.x] on linux<br />
+                            Type "help", "copyright", "credits" or "license" for more information.<br />
+                            >>>
+                        </div>
+                    </p>
+                    <p>
+                        <h3>Install Django</h3>
+                        You’ve got three options to install Django:
+                        <ul>
+                            <li>Install an official release. This is the best approach for most users.</li>
+                            <li>Install a version of Django provided by your operating system distribution.</li>
+                            <li>
+                                Install the latest development version. This option is for enthusiasts 
+                                who want the latest-and-greatest features<br />
+                                and aren’t afraid of running brand new code. You might encounter new 
+                                bugs in the development version, but <br />
+                                reporting them helps the development of Django. Also, releases of third-party packages are less likely to be
+                                compatible with the development version than with the latest stable release.        
+                            </li>
+                        </ul>
+                    </p>
+                    <p>
+                        To verify that Django can be seen by Python, type python from your shell. Then at the 
+                        Python prompt, try to import Django:<br />
+                        <div class="terminal">
+                            >>> import django<br />
+                            >>> print(django.get_version())<br />
+                            3.1<br />
+                        </div>
+                        <br />
+                        You may have another version of Django installed.
+                    </p>
+                </section>
+                <section class="main-section" id="Create_App">
+                    <header><h2>Create App</h2></header>
+                    <p>
+                        Let’s learn by example.
+                        We’ll walk you through the creation of a basic poll application.
+                        It’ll consist of two parts: 
+                        <ol>
+                            <li>A public site that lets people view polls and vote in them.</li>
+                            <li>An admin site that lets you add, change, and delete polls.</li>
+                        </ol>
+                    </p>
+                    <p>
+                        If this is your first time using Django, you’ll have to take care of some initial setup. 
+                        Namely, you’ll need to auto-
+                        generate some code that establishes a Django project – a collection of settings for 
+                        an instance of Django, including
+                        database configuration, Django-specific options and application-specific settings.
+                        From the command line, cd into a directory where you’d like to store your code, then 
+                        run the following command:
+                        <div class="terminal">
+                            $ django-admin startproject mysite
+                        </div>
+                    </p>
+                    <p>
+                        <h3>Creating the Polls App</h3>
+                        Now that your environment – a “project” – is set up, you’re set to start doing work.
+                        Each application you write in Django consists of a Python package that follows a certain convention. Django comes
+                        with a utility that automatically generates the basic directory structure of an app, so you can focus on writing code
+                        rather than creating directories.<br />
+                        <h4>Projects vs. apps</h4>
+                        What’s the difference between a project and an app? An app is a Web application that does something – e.g., a Weblog
+                        system, a database of public records or a small poll app. A project is a collection of configuration and apps for a
+                        particular website. A project can contain multiple apps. An app can be in multiple projects.<br />
+                        Your apps can live anywhere on your Python path. In this tutorial, we’ll create our poll app in the same directory as
+                        your manage.py file so that it can be imported as its own top-level module, rather than a submodule of mysite.
+                        To create your app, make sure you’re in the same directory as manage.py and type this command:
+                        <br />
+                        <div class="terminal">
+                            $ python manage.py startapp polls
+                        </div>
+                    </p>
+                </section>
+
+                <section class="main-section" id="First_View">
+                    <header><h2>First View</h2></header>
+                    <p>
+                        Let’s write the first view. Open the file polls/views.py and put the following Python code in it:
+                        <h3 class="code-head"></h3>
+                        <pre>
+                            <code>
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+                                </code>
+                            </pre>
+                        
+                    </p>
+                    <p></p>
+                </section>
+                <section class="main-section" id="Minimal_Form">
+                    <header><h2>Minimal Form</h2></header>
+                    <p>
+                        <h3 class="code-head">polls/templates/polls/index.html</h3>
+                        <pre>
+                            <code>
+&lt;h1&gt;{{ question.question_text }}&lt;/h1&gt;
+{% if error_message %}&lt;p&gt;&lt;strong&gt;{{ error_message }}&lt;/strong&gt;&lt;/p&gt;{% endif %}
+&lt;form action="{% url 'polls:vote' question.id %}" method="post"&gt;
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+&lt;input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}"&gt;
+&lt;label for="choice{{ forloop.counter }}"&gt;{{ choice.choice_text }}&lt;/label&gt;&lt;br&gt;
+{% endfor %}
+&lt;input type="submit" value="Vote"&gt;
+&lt;/form&gt;
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        A quick rundown:<br />
+                        <ul>
+                            <li>
+                                The above template displays a radio button for each question choice. 
+                                The value of each radio button is the
+                                associated question choice’s ID. The name of each radio button 
+                                is "choice". That means, when somebody
+                                selects one of the radio buttons and submits the form, it’ll send 
+                                the POST data choice=# where # is the ID of
+                                the selected choice. This is the basic concept of HTML forms.
+                            </li>
+                            <li>
+                                We set the form’s action to {% url 'polls:vote' question.id %}, and we set
+                                method="post". Using method="post" (as opposed to method="get") is very important, be-
+                                cause the act of submitting this form will alter data server-side. Whenever you create a form that alters data
+                                server-side, use method="post". This tip isn’t specific to Django; it’s good Web development practice in
+                                general.
+                            </li>
+                            <li>forloop.counter indicates how many times the for tag has gone through its loop</li>
+                            <li>
+                                Since we’re creating a POST form (which can have the effect of modifying data), we need to worry about Cross
+                                Site Request Forgeries. Thankfully, you don’t have to worry too hard, because Django comes with a helpful
+                                system for protecting against it. In short, all POST forms that are targeted at internal URLs should use the {%
+                                csrf_token %} template tag
+                            </li>
+                        </ul>
+                    </p>
+                </section>
+                <section class="main-section" id="Automated_Testing">
+                    <header><h2>Automated Testing</h2></header>
+                    <p>
+                        <h3>What are automated tests?</h3>
+                        Tests are routines that check the operation of your code.<br />
+                    </p>
+                    <p>
+                        <h3>Why you need to create tests</h3>
+                        So why create tests, and why now?<br />
+                        You may feel that you have quite enough on your plate just learning Python/Django, and having yet another thing
+                        to learn and do may seem overwhelming and perhaps unnecessary. After all, our polls application is working quite
+                        happily now; going through the trouble of creating automated tests is not going to make it work any better. If creating
+                        the polls application is the last bit of Django programming you will ever do, then true, you don’t need to know how to
+                        create automated tests. But, if that’s not the case, now is an excellent time to learn.
+                        
+                    </p>
+                    <p>
+                        <ul>
+                            <li>Tests will save you time</li>
+                            <li>Tests don’t just identify problems, they prevent them</li>
+                            <li>Tests make your code more attractive</li>
+                            <li>Tests help teams work together</li>
+                        </ul>
+                    </p>
+                    <p>
+                        <h3 class="code-head">polls/tests.py</h3>
+                        <pre>
+                            <code>
+import datetime
+from django.test import TestCase
+from django.utils import timezone
+from .models import Question
+
+
+class QuestionModelTests(TestCase):
+    def test_was_published_recently_with_future_question(self):
+        """
+        was_published_recently() returns False for questions whose pub_date
+        is in the future.
+        """
+        time = timezone.now() + datetime.timedelta(days=30)
+        future_question = Question(pub_date=time)
+        self.assertIs(future_question.was_published_recently(), False)
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section class="main-section" id="Customizing">
+                    <header><h2>Customizing</h2></header>
+                    <p>
+                        First, create a directory called static in your polls directory. 
+                        Django will look for static files there, similarly to
+                        how Django finds templates inside polls/templates/.
+                    </p>
+                    <p>
+                        Django’s STATICFILES_FINDERS setting contains a list of finders 
+                        that know how to discover static files from
+                        various sources. One of the defaults is AppDirectoriesFinder which 
+                        looks for a “static” subdirectory in each
+                        of the INSTALLED_APPS, like the one in polls we just created. The 
+                        admin site uses the same directory structure
+                        for its static files.
+                        <h3 class="code-head">polls/static/polls/style.css</h3>
+                        <pre>                            
+                            <code>
+li a {
+    color: green;
+    }
+body {
+    background: white url("images/background.gif") no-repeat;
+    }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Next, add the following at the top of polls/templates/polls/index.html:<br />
+                        <h3 class="code-head">polls/templates/polls/index.html</h3>
+                        <pre>
+                            <code>
+{% load static %}
+&lt;link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"&gt;
+                            </code>
+                        </pre><br />
+                        The {% static %} template tag generates the absolute URL of static files.
+                        That’s all you need to do for development.
+                        Start the server (or restart it if it’s already running):
+                    </p>
+                </section>
+                <footer>Copyright 2020 &nbsp; Django is a <a href="https://www.djangoproject.com/trademarks/">registered trademark</a> of the Django Software Foundation.</footer>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
